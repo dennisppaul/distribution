@@ -2,7 +2,8 @@
 # Copyright (C) 2024 ROCKNIX
 
 PKG_NAME="SDL3"
-PKG_VERSION="3.4.0"
+PKG_VERSION="3.4.2"
+PKG_SHA256="ef39a2e3f9a8a78296c40da701967dd1b0d0d6e267e483863ce70f8a03b4050c"
 PKG_LICENSE="zlib"
 PKG_SITE="https://www.libsdl.org/"
 PKG_URL="https://www.libsdl.org/release/SDL3-${PKG_VERSION}.tar.gz"
@@ -90,7 +91,7 @@ pre_configure_target() {
     -DSDL_LIBC=ON \
     -DSDL_GCC_ATOMICS=ON \
     -DSDL_LIBUDEV=ON \
-    -DSDL_DBUS=ON \
+    -DSDL_DBUS=OFF \
     -DSDL_PTHREADS=ON \
     -DSDL_PTHREADS_SEM=ON \
     -DSDL_DLOPEN=ON \
@@ -148,7 +149,8 @@ pre_configure_target() {
     -DSDL_XINPUT=OFF \
     -DSDL_IBUS=OFF \
     -DSDL_RPI=OFF \
-    -DSDL_WASAPI=OFF"
+    -DSDL_WASAPI=OFF \
+    "
 }
 
 post_makeinstall_target() {
